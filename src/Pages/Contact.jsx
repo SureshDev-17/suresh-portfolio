@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef } from 'react';
+import { useRef } from "react";
 import emailjs from "emailjs-com";
 import profileImg from "../assets/profilePic.png";
 
@@ -11,10 +11,10 @@ export const Contact = () => {
 
     emailjs
       .sendForm(
-        "service_25aakqs",  
-        "template_zqioetn",  
+        "service_25aakqs",
+        "template_zqioetn",
         form.current,
-        "4RBbb8vlDliLufpKf"    
+        "4RBbb8vlDliLufpKf"
       )
       .then(
         (result) => {
@@ -34,12 +34,15 @@ export const Contact = () => {
       initial={{ x: "100vw", opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
       exit={{ x: "-100vw", opacity: 0 }}
-      transition={{ duration: 0.9, ease: "easeInOut" }}
+      transition={{ duration: 1.6, ease: "easeInOut" }}
     >
-      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-10 items-center">
+      <div className="max-w-6xl w-full grid md:grid-cols-2 gap-5 md:gap-10 items-center">
         {/* Left - Image */}
-        <div className="flex justify-center md:justify-end">
-          <div className="relative" style={{ width: "350px", height: "400px" }}>
+        <div className="flex justify-center md:justify-center">
+          <div
+            className="relative md:-translate-x-6 mt-[-35px]"
+            style={{ width: "400px", height: "600px" }}
+          >
             <img
               src={profileImg}
               alt="Contact"
@@ -92,4 +95,4 @@ export const Contact = () => {
       </div>
     </motion.div>
   );
-}
+};
